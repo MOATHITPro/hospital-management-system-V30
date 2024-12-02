@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #c6c3c3;
+    --secondary-color: #ffffff;
+    --highlight-color: #19470e;
+    --black-color: #000000;
+    --card-bg-color: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --status-cancelled-color: #ff4d4d;
+    --hover-bg-color: #f1f1f1;
+    --card-gradient: linear-gradient(90deg, #f7b7a3, #ffd280);
+}
+
+
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.visit_details_box {
+    position: relative;
+    width: 700px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 2em;
+    color: var(--secondary-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+.visit-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 300px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.visit-header span {
+    font-size: 24px;
+    color: var(--black-color);
+}
+
+
+
+
+
+.details-container {
+    margin-top: 80px;
+}
+
+.visit-card {
+    background: var(--card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px var(--card-shadow);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.visit-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    background: var(--highlight-color);
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card-body {
+    margin-top: 10px;
+}
+
+.visit-info,
+.doctor-info,
+.clinic-info,
+.time-info {
+    margin-bottom: 20px;
+}
+
+.visit-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.visit-row strong {
+    font-weight: bold;
+    color: var(--highlight-color);
+}
+
+.visit-row span {
+    color: var(--black-color);
+}
+
+.status-cancelled {
+    color: var(--status-cancelled-color);
+    font-weight: bold;
+}
+
+.visit-row span {
+    word-wrap: break-word;
+}
+
+.visit-card .visit-info,
+.visit-card .doctor-info,
+.visit-card .clinic-info,
+.visit-card .time-info {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.visit-card .visit-info div,
+.visit-card .doctor-info div,
+.visit-card .clinic-info div,
+.visit-card .time-info div {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.visit-card .visit-info div:last-child,
+.visit-card .doctor-info div:last-child,
+.visit-card .clinic-info div:last-child,
+.visit-card .time-info div:last-child {
+    border-bottom: none;
+}
+
+@media only screen and (max-width: 564px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    .visit_details_box {
+        padding: 2em 1.5em;
+    }
+
+    .visit-card {
+        width: 100%;
+    }
+}

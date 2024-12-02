@@ -1,0 +1,250 @@
+/* Basic Styling */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif; /* تطبيق خط Cairo */
+}
+
+:root {
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
+
+    /* ألوان المواعيد */
+    --time-slot-bg: #ffffff;
+    --time-slot-text: #0a0a0a;
+
+    /* ألوان Hover */
+    --time-slot-hover-bg: #4CAF50;
+    --time-slot-hover-text: #ffffff;
+
+    /* ألوان Selected */
+    --time-slot-selected-bg: #388E3C;
+    --time-slot-selected-text: #ffffff;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.calendar_box {
+    position: relative;
+    width: 65vw;
+    max-width: 600px;
+    backdrop-filter: blur(20px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 10vh 3vw 5vh 3vw;
+    color: var(--second-color);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right; /* تعديل الاتجاه */
+}
+
+.calendar-header {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 40vw;
+    max-width: 350px;
+    height: 50px;
+    border-radius: 0 0 20px 20px;
+}
+
+.calendar-header h2 {
+    font-size: 24px;
+    color: var(--black-color);
+}
+
+.calendar-header::before,
+.calendar-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+}
+
+.calendar-header::before {
+    right: -30px; /* تعديل إلى اليمين */
+    border-top-left-radius: 50%;
+    box-shadow: -15px 0 0 0 var(--primary-color);
+}
+
+.calendar-header::after {
+    left: -30px; /* تعديل إلى اليسار */
+    border-top-right-radius: 50%;
+    box-shadow: 15px 0 0 0 var(--primary-color);
+}
+
+/* Customizing Flatpickr */
+.flatpickr-calendar {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    direction: rtl; /* تعديل اتجاه التقويم */
+}
+
+/* تغيير لون الأيام العادية */
+.flatpickr-day {
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+/* تغيير لون اليوم الحالي */
+.flatpickr-day.today {
+    color: #50E3C2;
+    border-color: var(--primary-color);
+    font-weight: bold;
+    cursor: default;
+}
+
+/* تغيير لون الأيام المحددة */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background-color: #4CAF50 !important;
+    color: #f6fdf9 !important;
+    border-radius: 50% !important;
+}
+
+/* تخصيص أزرار التنقل */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+    color: var(--primary-color);
+}
+
+.flatpickr-weekday {
+    color: var(--black-color);
+    font-weight: bold;
+    text-align: right; /* تعديل الاتجاه */
+}
+
+/* تخصيص عرض الأوقات باستخدام CSS Grid لعرض مواعيد متعددة */
+#times-list {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    justify-items: center;
+}
+
+.time-slot {
+    padding: 10px 10px;
+    margin: 0;
+    cursor: pointer;
+    color: var(--time-slot-text);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    background: var(--time-slot-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.time-slot:hover {
+    background-color: var(--time-slot-hover-bg);
+    color: var(--time-slot-hover-text);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.time-slot.selected {
+    background-color: var(--time-slot-selected-bg);
+    color: var(--time-slot-selected-text);
+}
+
+/* النص التوضيحي */
+.explanatory-text {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: right; /* تعديل الاتجاه */
+}
+
+/* زر الحجز */
+.book-btn {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.book-btn button {
+    grid-column: span 2;
+    width: 100%;
+    height: 45px;
+    background: #ececec;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-btn button:hover {
+    background: #ccf5f3;
+}
+
+.book-btn button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) and (min-width: 565px) {
+    #times-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 564px) {
+    .calendar_box {
+        width: 90vw;
+        padding: 5vh 1.5em 3vh 1.5em;
+    }
+
+    #times-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .time-slot {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .calendar-header h2 {
+        font-size: 20px;
+    }
+
+    .explanatory-text {
+        font-size: 14px;
+    }
+
+    .book-btn button {
+        height: 40px;
+        font-size: 12px;
+    }
+}

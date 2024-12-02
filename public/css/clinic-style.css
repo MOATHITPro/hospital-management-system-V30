@@ -1,0 +1,245 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
+}
+
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 50px;
+}
+
+.main_box {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 250px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.main-header span {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.clinic-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.clinic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.clinic-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #15926c;
+    /* لون النص */
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #d4d4d4, #f0f0f0);
+    /* خلفية بتدرج لوني خفيف */
+    border: 2px solid #d4af37;
+    /* إطار ذهبي */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 15px rgba(212, 175, 55, 0.4);
+    /* ظل مع لمسة ذهبية */
+    text-align: center;
+    text-transform: uppercase;
+    /* كل الحروف كبيرة لجعل العنوان أكثر فخامة */
+    letter-spacing: 1px;
+    /* توسيع المسافات بين الحروف */
+    display: inline-block;
+}
+.clinic-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: filter 0.3s;
+}
+
+.clinic-card:hover img {
+    filter: brightness(0.9);
+}
+
+.card-content {
+    padding: 15px;
+    color: var(--second-color);
+    text-align: center;
+}
+
+.card-content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--second-color);
+}
+
+.card-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.button {
+    background-color: #ececec;
+    color: var(--black-color);
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--second-color);
+    color: var(--black-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
+.clinic-location {
+    font-size: 13px;
+    color: #010906;
+    /* لون النص */
+    font-style: italic;
+    margin: 10px 0;
+    padding: 8px 12px;
+    border: none;
+    /* إزالة الإطار */
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(31, 160, 188, 0.15), rgba(255, 255, 255, 0.1));
+    /* تدرج لوني لطيف */
+    display: inline-block;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    /* ظل ناعم */
+    text-align: center;
+}
+.clinic-location span {
+    margin: 0 5px;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 768px) {
+    .main_box {
+        padding: 6em 2em 3em 2em;
+    }
+
+    .main-header {
+        width: 200px;
+        height: 60px;
+    }
+
+    .main-header span {
+        font-size: 24px;
+    }
+
+    .buttons-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .clinic-card img {
+        height: 80px;
+    }
+
+    .card-content h2 {
+        font-size: 16px;
+    }
+
+    .card-content p {
+        font-size: 13px;
+    }
+
+    .button {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+}
+
+/* Responsive Design for Phones */
+@media (max-width: 480px) {
+    .main_box {
+        padding: 5em 1.5em 2.5em 1.5em;
+    }
+
+    .main-header {
+        width: 180px;
+        height: 50px;
+    }
+
+    .main-header span {
+        font-size: 20px;
+    }
+
+    .buttons-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .clinic-card img {
+        height: 70px;
+    }
+
+    .card-content h2 {
+        font-size: 14px;
+    }
+
+    .card-content p {
+        font-size: 12px;
+    }
+
+    .button {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+}

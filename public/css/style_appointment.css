@@ -1,0 +1,388 @@
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: "Poppins", sans-serif;*/
+/*}*/
+
+/*:root {*/
+/*    --primary-color: #c6c3c3;*/
+/*    --second-color: #ffffff;*/
+/*    --black-color: #000000;*/
+/*}*/
+
+
+/*.wrapper {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    min-height: 100vh;*/
+/*    background-color: rgba(0, 0, 0, 0.2);*/
+/*    padding: 50px;*/
+/*}*/
+
+/*.main_box {*/
+/*    position: relative;*/
+/*    width: 700px;*/
+/*    height: auto;*/
+/*    backdrop-filter: blur(25px);*/
+/*    border: 2px solid var(--primary-color);*/
+/*    border-radius: 15px;*/
+/*    padding: 7.5em 2.5em 4em 2.5em;*/
+/*    color: var(--second-color);*/
+/*    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);*/
+/*    text-align: center;*/
+/*    margin-top: 50px;*/
+/*}*/
+
+/*.main-header {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    background-color: var(--primary-color);*/
+/*    width: 450px;*/
+/*    height: 70px;*/
+/*    border-radius: 0 0 20px 20px;*/
+/*}*/
+
+/*.main-header span {*/
+/*    font-size: 30px;*/
+/*    color: var(--black-color);*/
+/*}*/
+
+/*.welcome-text {*/
+/*    margin: 20px 0;*/
+/*    font-size: 18px;*/
+/*    color: var(--second-color);*/
+/*}*/
+
+/*.dropdown-container {*/
+/*    margin-top: 30px;*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*.dropdown {*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    margin-top: 10px;*/
+/*    font-size: 16px;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid var(--primary-color);*/
+/*}*/
+
+/*!* تصميم زر العودة *!*/
+/*!* تصميم زر العودة *!*/
+/*.return-button {*/
+/*    height: 50px;*/
+/*    width: 100;*/
+/*    position: fixed;*/
+/*    !* يجعل الزر في موضع ثابت *!*/
+/*    top: 20px;*/
+/*    !* المسافة من أعلى الشاشة *!*/
+/*    right: 20px;*/
+/*    !* المسافة من يمين الشاشة *!*/
+/*    background-color: #ececec;*/
+/*    color: var(--black-color);*/
+/*    padding: 10px 15px;*/
+/*    !* تقليل حجم الحواف لتتناسب مع الأيقونة *!*/
+/*    font-size: 20px;*/
+/*    !* حجم الأيقونة *!*/
+/*    border: none;*/
+/*    border-radius: 40%;*/
+/*    !* لجعل الزر دائري *!*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.return-button:hover {*/
+/*    background-color: var(--second-color);*/
+/*    color: var(--black-color);*/
+/*}*/
+
+/*.return-button i {*/
+/*    font-size: 20px;*/
+/*    !* حجم الأيقونة *!*/
+/*}*/
+
+/*.checkbox-container {*/
+/*    text-align: left;*/
+/*    margin-top: 30px;*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*.checkbox {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.checkbox label {*/
+/*    margin-left: 10px;*/
+/*}*/
+
+/*!* تنسيق الأزرار *!*/
+/*.buttons-container {*/
+/*    margin-top: 20px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    width: 100%;*/
+/*    !* لجعل الأزرار تأخذ عرضًا كاملاً *!*/
+/*}*/
+
+/*.button {*/
+/*    background-color: #ececec;*/
+/*    color: var(--black-color);*/
+/*    padding: 15px 40px;*/
+/*    text-align: center;*/
+/*    text-decoration: none;*/
+/*    font-size: 18px;*/
+/*    border: none;*/
+/*    border-radius: 30px;*/
+/*    cursor: pointer;*/
+/*    margin: 10px 0;*/
+/*    !* لإضافة مسافة بين الأزرار *!*/
+/*    transition: background-color 0.3s;*/
+/*    width: 100%;*/
+/*    !* لجعل الزر يمتد على كامل عرض الصندوق *!*/
+/*}*/
+
+/*.button:hover {*/
+/*    background-color: var(--second-color);*/
+/*    color: var(--black-color);*/
+/*}*/
+
+/*#checkbox-container {*/
+/*    display: none;*/
+/*}*/
+
+/*@media only screen and (max-width: 564px) {*/
+/*    .wrapper {*/
+/*        padding: 20px;*/
+/*    }*/
+
+/*    .main_box {*/
+/*        padding: 7.5em 1.5em 4em 1.5em;*/
+/*    }*/
+/*}*/
+
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #c6c3c3;
+    --secondary-color: #ffffff;
+    --black-color: #000000;
+    --green-color: green;
+    --red-color: red;
+    --yellow-color: orange;
+    /* يمكنك تغيير اللون إذا رغبت */
+    --default-color: #ececec;
+}
+
+
+/* Wrapper styles */
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 50px;
+}
+
+/* Main box styles */
+.main_box {
+    position: relative;
+    width: 700px;
+    height: auto;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--secondary-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Header styles */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 450px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.main-header span {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+/* Welcome text styles */
+.welcome-text {
+    margin: 20px 0;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+/* Dropdown styles */
+.dropdown-container {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+
+/* Return button styles */
+.return-button {
+    height: 50px;
+    width: 50px;
+    /* تصحيح العرض من 100 إلى 50px لجعل الزر مربع */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ececec;
+    color: var(--black-color);
+    padding: 10px 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    /* تغيير إلى 50% لجعل الزر دائري */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.return-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--black-color);
+}
+
+.return-button i {
+    font-size: 20px;
+}
+
+/* Checkbox container styles */
+.checkbox-container {
+    text-align: left;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.checkbox {
+    margin-bottom: 10px;
+}
+
+.checkbox label {
+    margin-left: 10px;
+}
+
+/* Buttons container styles */
+.buttons-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Severity label styles */
+.severity-container {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+.severity-label {
+    font-weight: bold;
+}
+
+/* Button styles */
+.button {
+    background-color: var(--default-color);
+    color: var(--black-color);
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    color: var(--black-color);
+}
+
+/* Submit button color classes */
+button#submitButton.green {
+    background-color: var(--green-color);
+    color: var(--secondary-color);
+}
+
+button#submitButton.yellow {
+    background-color: var(--yellow-color);
+    color: var(--secondary-color);
+}
+
+button#submitButton.red {
+    background-color: var(--red-color);
+    color: var(--secondary-color);
+}
+
+button#submitButton.default {
+    background-color: var(--default-color);
+    color: var(--black-color);
+}
+
+#checkbox-container {
+    display: none;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 564px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    .main_box {
+        padding: 7.5em 1.5em 4em 1.5em;
+        width: 100%;
+    }
+
+    .main-header {
+        width: 100%;
+    }
+}

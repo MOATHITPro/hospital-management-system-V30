@@ -1,0 +1,969 @@
+
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #c6c3c3;
+    --secondary-color: #ffffff;
+    --black-color: #000000;
+    --sidebar-bg-color: #2d3436;
+    --sidebar-hover-color: #6c757d;
+    --sidebar-active-color: #495057;
+    --table-header-bg: #495057;
+    --table-row-bg: #ffffff;
+    --table-row-hover-bg: #f1f1f1;
+    --table-text-color: #000000;
+    --clinic-overview-primary-color: #c6c3c3;
+    --clinic-overview-secondary-color: #ffffff;
+    --clinic-overview-highlight-color: #15926c;
+    --clinic-overview-black-color: #000000;
+    --clinic-overview-box-bg-color: rgba(255, 255, 255, 0.2);
+    --clinic-overview-doctor-bg-color: #e6f7ff;
+    /* خلفية للأطباء */
+    --clinic-overview-nurse-bg-color: #f9f0ff;
+    /* خلفية للممرضين */
+    --clinic-overview-staff-bg-color: #fffbe6;
+    /* خلفية للموظفين العامين */
+    --select-doctor-primary-color: #c6c3c3;
+    --select-doctor-secondary-color: #ffffff;
+    --select-doctor-black-color: #000000;
+    --select-doctor-highlight-color: #15926c;
+    --select-doctor-box-bg-color: rgba(255, 255, 255, 0.2)
+}
+
+/* Body Styling */
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--sidebar-bg-color), var(--sidebar-active-color));
+    color: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transition: width 0.3s;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--sidebar-active-color);
+    border-radius: 3px;
+}
+
+/* User Profile in Sidebar */
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user-icon {
+    font-size: 70px;
+    color: var(--secondary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    margin-top: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.user-email {
+    font-size: 14px;
+    color: #adb5bd;
+}
+
+/* Divider */
+.divider {
+    width: 80%;
+    border: 1px solid var(--sidebar-active-color);
+    margin: 10px 0;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    margin-bottom: 30px;
+}
+
+.sidebar-header h3 {
+    color: var(--secondary-color);
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar-menu li {
+    width: 100%;
+}
+
+.sidebar-menu li .button {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    /* Align text to the left */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    transition: background-color 0.3s, padding-left 0.3s;
+    position: relative;
+}
+
+.sidebar-menu li .button i {
+    margin-right: 15px;
+    /* Space between icon and text */
+    font-size: 20px;
+    min-width: 25px;
+    text-align: center;
+}
+
+.sidebar-menu li .button::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s;
+}
+
+.sidebar-menu li .button:hover {
+    background-color: var(--sidebar-hover-color);
+    padding-left: 30px;
+}
+
+.sidebar-menu li .button:hover::before {
+    background-color: var(--secondary-color);
+}
+
+/* Highlight Active Menu Item */
+.sidebar-menu li.active .button {
+    background-color: var(--sidebar-active-color);
+    padding-left: 30px;
+}
+
+.sidebar-menu li.active .button::before {
+    background-color: var(--secondary-color);
+}
+
+/* Main Content Wrapper */
+.wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-left: 250px;
+    transition: margin-left 0.3s;
+}
+
+/* Main Box Styling */
+.main_box {
+    width: calc(100% - 300px);
+    max-width: 900px;
+    position: relative;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--secondary-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Main Header */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 350px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.main-header span {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+/* Welcome Text */
+.welcome-text {
+    margin: 20px 0;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+/* Buttons */
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    outline: inherit;
+}
+
+/* Return to Home Button */
+
+
+/* Content Sections */
+.content-section {
+    display: none;
+}
+
+/* Forms */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.input_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    background: transparent;
+    color: var(--secondary-color);
+    padding: 0 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+}
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: 0.2s;
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+
+.input-field:focus~.label,
+.input-field:valid~.label {
+    top: -10px;
+    left: 20px;
+    font-size: 12px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    color: var(--black-color);
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.icon {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 18px;
+}
+
+.input-submit {
+    width: 100%;
+    height: 45px;
+    background: #ececec;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-submit:hover {
+    background: var(--secondary-color);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead {
+    background-color: var(--table-header-bg);
+    color: var(--secondary-color);
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table tbody tr {
+    background-color: var(--table-row-bg);
+    color: var(--table-text-color);
+    transition: background-color 0.3s;
+}
+
+table tbody tr:hover {
+    background-color: var(--table-row-hover-bg);
+}
+/* Clinic Cards Container */
+.clinic-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px;
+    align-items: flex-start; /* لضمان محاذاة البطاقات للأعلى */
+}
+
+
+/* Clinic Card Styling */
+/*.clinic-card {*/
+/*    flex: 1 1 190px;*/
+/*    !* تقليل الحد الأدنى للعرض إلى 180 بكسل بدلاً من 250 *!*/
+/*    max-width: 220px;*/
+/*    !* تقليل الحد الأقصى للعرض إلى 220 بكسل بدلاً من 300 *!*/
+/*    min-height: 358px;*/
+/*    !* تقليل الحد الأدنى للارتفاع إلى 250 بكسل بدلاً من 350 *!*/
+/*    border-radius: 15px;*/
+/*    background: linear-gradient(145deg, #ffffff, #f9f9f9);*/
+/*    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);*/
+/*    transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+/*    overflow: hidden;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*    cursor: pointer;*/
+/*}*/
+
+.details-section {
+    display: none;
+    /* إخفاء القسم افتراضياً */
+    max-height: none;
+    /* السماح بامتداد هذا القسم فقط */
+}
+
+.clinic-card.expanded {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.clinic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.clinic-card-img {
+    width: 100%;
+    height: 120px;
+    /* تقليل ارتفاع الصورة إلى 120 بكسل بدلاً من 150 */
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: filter 0.3s ease;
+}
+
+.clinic-card:hover .clinic-card-img {
+    filter: brightness(1);
+}
+
+.card-content {
+    padding: 15px;
+    /* تقليل الحشو الداخلي إلى 15 بكسل بدلاً من 20 */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    /* يملأ المساحة المتبقية */
+}
+
+.card-content h3 {
+    font-size: 18px;
+    /* تقليل حجم الخط للعنوان */
+    color: #1e1e1e;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+
+.edit-button,
+.delete-button {
+    flex-grow: 1;
+    padding: 8px 10px;
+    /* تقليل الحشو الداخلي للأزرار */
+    font-size: 10px;
+    /* تقليل حجم الخط */
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin: 2px;
+}
+
+.edit-button {
+    background-color: #e08e0b;
+}
+
+.edit-button:hover {
+    background-color: #e08e0b;
+    transform: scale(1.05);
+}
+
+.delete-button {
+    background-color: #d62c1a;
+}
+
+.delete-button:hover {
+    background-color: #d62c1a;
+    transform: scale(1.05);
+}
+
+.show-info-button {
+    margin-top: 10px;
+    background-color: #15926c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    /* تقليل الحشو الداخلي */
+    font-size: 12px;
+    /* تقليل حجم الخط */
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.show-info-button:hover {
+    background-color: #15926c;
+    transform: scale(1.05);
+}
+
+.details-section {
+    display: none;
+}
+
+
+.clinic-card-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+
+<!--
+/* Edit Staff Container */
+.edit-staff-container {
+    background: var(--box-bg-color);
+    padding: 3em 2.5em;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    max-width: 90%;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--primary-color);
+    color: var(--black-color);
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.edit-staff-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+}
+/* style  select d*/
+.select-doctor-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.select-doctor-clinic-card {
+    position: relative;
+    overflow: hidden;
+    color: var(--select-doctor-secondary-color);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.select-doctor-clinic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.select-doctor-clinic-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #15926c;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #d4d4d4, #f0f0f0);
+    border: 2px solid #d4af37;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 15px rgba(212, 175, 55, 0.4);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.select-doctor-clinic-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: filter 0.3s;
+}
+
+.select-doctor-clinic-card:hover img {
+    filter: brightness(0.9);
+}
+
+.select-doctor-card-content {
+    padding: 15px;
+    color: var(--select-doctor-second-color);
+    text-align: center;
+}
+
+.select-doctor-card-content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--select-doctor-secondary-color);
+}
+
+.select-doctor-card-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.select-doctor-button {
+    background-color: #ececec;
+    color: var(--select-doctor-black-color);
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-doctor-button:hover {
+    background-color: var(--select-doctor-secondary-color);
+    color: var(--select-doctor-black-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
+
+.select-doctor-clinic-location {
+    font-size: 13px;
+    color: #010906;
+    font-style: italic;
+    margin: 10px 0;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(31, 160, 188, 0.15), rgba(255, 255, 255, 0.1));
+    display: inline-block;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.select-doctor-clinic-location span {
+    margin: 0 5px;
+}
+
+
+
+
+/* Staff Container Styling */
+.staff-container {
+    margin-bottom: 20px;
+}
+
+/* Staff List Styling */
+.staff-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.staff-list h4 {
+    color: #15926c;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+}
+
+.staff-item {
+    flex: 1 1 calc(45% - 20px);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: #0a0a0a;
+}
+
+.staff-item:hover {
+    background-color: #eef7f2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.staff-item input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+/* Buttons Styling */
+.form-actions {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.form-actions button {
+    flex: 1;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: var(--secondary-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+}
+
+.form-actions button:hover {
+    transform: scale(1.05);
+}
+
+.form-actions .delete-button {
+    background-color: #d62c1a;
+}
+
+.form-actions .delete-button:hover {
+    background-color: #c82333;
+}
+
+.form-actions .cancel-button {
+    background-color: #6c757d;
+}
+
+.form-actions .cancel-button:hover {
+    background-color: #5a6268;
+}
+
+
+/* بطاقات معلومات العيادة */
+.clinic-overview-info-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 70px;
+    pointer-events: none;
+}
+
+.clinic-overview-info-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.clinic-overview-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.clinic-overview-info-card i {
+    font-size: 20px;
+    color: var(--clinic-overview-highlight-color);
+    margin-right: 15px;
+    pointer-events: none;
+}
+
+.clinic-overview-info-card .clinic-overview-info-text {
+    font-size: 16px;
+    color: #474444;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.clinic-overview-info-card .clinic-overview-info-text span {
+    color: var(--clinic-overview-highlight-color);
+    font-weight: normal;
+    pointer-events: none;
+}
+
+/* عناوين أقسام الموظفين */
+.clinic-overview-section-title {
+    color: var(--clinic-overview-highlight-color);
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    text-align: left;
+    margin-bottom: 12px;
+    margin-top: 20px;
+    pointer-events: none;
+}
+
+/* خلفية الأطباء */
+.clinic-overview-staff-item.doctor {
+    background-color: var(--clinic-overview-doctor-bg-color);
+}
+
+/* خلفية الممرضين */
+.clinic-overview-staff-item.nurse {
+    background-color: var(--clinic-overview-doctor-bg-color);
+}
+
+/* خلفية الموظفين العامين */
+.clinic-overview-staff-item.general-staff {
+    background-color: var(--clinic-overview-doctor-bg-color);
+}
+
+/* العناصر العامة لعناصر الموظفين */
+.clinic-overview-staff-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.clinic-overview-staff-item:hover {
+    background-color: #eef7f2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.clinic-overview-staff-item span {
+    color: var(--clinic-overview-black-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main_box {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar-menu li {
+        flex: 1 0 auto;
+    }
+
+    .wrapper {
+        margin-left: 0;
+    }
+}
+
+select.input-field option {
+    color: #000000;
+    /* Set text color to black */
+}
+
+
+/* تحسين تنسيق بطاقات التنبيهات */
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.notification-card {
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #f9f9f9, #f2f2f7);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.notification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.notification-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.notification-card:hover::after {
+    opacity: 1;
+}
+
+.notification-icon {
+    font-size: 30px;
+    color: #4CAF50;
+    margin-right: 20px;
+    align-self: center;
+}
+
+.notification-content {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    width: 100%;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+.notification-type {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.notification-action {
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    text-transform: capitalize;
+}
+
+.notification-description {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.notification-date {
+    font-size: 14px;
+    color: #666; /* لون هادئ */
+    font-style: italic;
+    margin-top: 10px;
+    text-align: right;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* تنسيق عداد التنبيهات */
+.notification-count {
+    background-color: #ff3b3f;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 4px 8px;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.download-button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px; /* نفس حشو زر عرض المعلومات */
+    font-size: 12px; /* نفس حجم خط زر عرض المعلومات */
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button i {
+    margin-right: 5px; /* تباعد الأيقونة عن النص */
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+

@@ -1,0 +1,174 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #e6e3e3;
+    --second-color: #333;
+    --black-color: #333;
+    --success-color: #1b551b;
+}
+
+
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.appointment-box {
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 6em 2em 3em 2em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.appointment-box h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 280px;
+    height: 60px;
+    border-radius: 0 0 20px 20px;
+    font-size: 22px;
+    color: var(--black-color);
+}
+
+.appointment-details {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--black-color);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.appointment-details p {
+    margin-bottom: 10px;
+}
+
+.appointment-details span {
+    font-weight: bold;
+    color: var(--success-color);
+}
+
+.appointment-details ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.appointment-details ul li {
+    margin-bottom: 10px;
+    color: var(--black-color);
+}
+
+.countdown-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--black-color);
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.countdown-item {
+    text-align: center;
+    color: var(--black-color);
+}
+
+.countdown-item div {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.countdown-item span {
+    font-size: 14px;
+    color: var(--success-color);
+}
+
+.cancel-appointment-button {
+    width: 100%;
+    height: 45px;
+    background: var(--primary-color);
+    color: var(--black-color);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cancel-appointment-button:hover {
+    background: red;
+    transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 564px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    .appointment-box {
+        padding: 6em 1.5em 3em 1.5em;
+    }
+}
+
+.return-button {
+    position: fixed;
+    /* يجعل الزر في موضع ثابت */
+    top: 20px;
+    /* المسافة من أعلى الشاشة */
+    right: 20px;
+    /* المسافة من يمين الشاشة */
+    background-color: #ececec;
+    color: var(--black-color);
+    padding: 10px 15px;
+    /* تقليل حجم الحواف لتتناسب مع الأيقونة */
+    font-size: 20px;
+    /* حجم الأيقونة */
+    border: none;
+    border-radius: 50%;
+    /* لجعل الزر دائري */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.return-button:hover {
+    background-color: var(--second-color);
+    color: var(--black-color);
+}
+
+.return-button i {
+    font-size: 20px;
+    /* حجم الأيقونة */
+}

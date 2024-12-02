@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
+}
+
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 50px;
+}
+
+.main_box {
+    position: relative;
+    width: 900px;
+    height: auto;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 250px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.main-header span {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+.main-header::before,
+.main-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+}
+
+.main-header::before {
+    left: -30px;
+    border-top-right-radius: 50%;
+    box-shadow: 15px 0 0 0 var(--primary-color);
+}
+
+.main-header::after {
+    right: -30px;
+    border-top-left-radius: 50%;
+    box-shadow: -15px 0 0 0 var(--primary-color);
+}
+
+.button {
+    background-color: #ececec;
+    color: var(--black-color);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    /* جعل الأزرار تملأ العرض بالكامل */
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--second-color);
+    color: var(--black-color);
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* كل زر يأخذ عرض العمود بالكامل */
+    gap: 20px;
+    /* مسافة بين الأزرار */
+    padding-top: 30px;
+}
+
+@media only screen and (max-width: 564px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    .main_box {
+        padding: 7.5em 1.5em 4em 1.5em;
+    }
+
+    .buttons-container {
+        grid-template-columns: 1fr;
+        /* يبقى كل زر يأخذ عرض كامل في الشاشات الصغيرة */
+    }
+}
